@@ -1,0 +1,33 @@
+﻿@model Root
+@{
+    ViewData["Title"] = "Miami";
+}
+
+<h1>Weather Forecast for @Model.location.name</h1>
+
+<table class="table table-bordered table-hover">
+     <tr>
+        <td>Country Name</td>
+        <td>@Model.location.country</td>
+    </tr>
+       <tr>
+        <td>Local Time</td>
+        <td>@Model.location.localtime</td>
+    </tr>
+       <tr>
+        <td>Weather</td>
+        <td>@Model.current.condition.text</td>
+    </tr>
+       <tr>
+        <td>Icon</td>
+        <td><img src="@(Model.current.condition.icon)" /></td>
+    </tr>
+       <tr>
+        <td>Tempature</td>
+        <td>@Model.current.temp_c<sup>o</sup>C </td>
+    </tr>
+       <tr>
+        <td>Feels like Tempature</td>
+        <td>@Model.current.feelslike_c<sup>o</sup>C </td>
+    </tr>
+</table>
